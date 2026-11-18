@@ -19,8 +19,7 @@ body {
 
 /* Cabecera con imagen de fondo */
 header {
-  background-image: linear-gradient(rgba(30, 42, 56, 0.6), rgba(30, 42, 56, 1)),
-    url("https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1600&q=80");
+  background-image: url("https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1600&q=80");
   background-size: cover;
   background-position: center;
   padding: 4rem 1rem;
@@ -31,11 +30,6 @@ h1 {
   font-size: 3rem;
   font-weight: bold;
   color: var(--third-color);
-}
-header p {
-  font-size: 1.25rem;
-  margin-top: 0.5rem;
-  color: var(--primary-color);
 }
 
 /* Formulario centrado */
@@ -148,16 +142,9 @@ a {
 }
 
 /* Página de normas */
-.normas h2 {
-  font-size: 1.25rem;
-  margin-top: 1.25rem;
-  margin-bottom: 0.35rem;
-}
-.normas h2:first-child {
-  margin-top: 0;
-}
-.normas .btn {
-  margin-top: 2rem;
+.normas li {
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
 }
 
 /* Pantallas pequeñas */
