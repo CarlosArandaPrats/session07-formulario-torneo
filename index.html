@@ -3,149 +3,105 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inscripción · Copa Arena 2026</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+    <title>Inscripción Torneo Gaming</title>
 
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
-    <main class="layout">
-      <!-- Panel lateral con la imagen y los datos del torneo -->
-      <aside class="hero">
-        <div class="hero-content">
-          <p class="badge">Inscripciones abiertas</p>
-          <h1>Copa Arena 2026</h1>
-          <p class="hero-text">Forma parte del torneo online del año. Elige tu juego, tu plataforma y demuestra lo que vales.</p>
+    <header>
+      <h1>Torneo Gaming 2026</h1>
+      <p>Formulario de inscripción</p>
+    </header>
 
-          <dl class="stats">
-            <div>
-              <dt>Fechas</dt>
-              <dd>12-14 dic</dd>
-            </div>
-            <div>
-              <dt>Premio</dt>
-              <dd>1.500 €</dd>
-            </div>
-            <div>
-              <dt>Plazas</dt>
-              <dd>128</dd>
-            </div>
-          </dl>
+    <main>
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Datos personales</legend>
+
+          <div class="form-group">
+            <label for="nombre" class="is-required">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="is-required">Correo electrónico</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="edad">Edad</label>
+            <input type="number" id="edad" name="edad" min="16" />
+          </div>
+
+          <div class="form-group">
+            <label for="fecha">Fecha de nacimiento</label>
+            <input type="date" id="fecha" name="fecha" />
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Cuenta de jugador</legend>
+
+          <div class="form-group">
+            <label for="nickname" class="is-required">Nombre del jugador (nickname)</label>
+            <input type="text" id="nickname" name="nickname" minlength="3" maxlength="15" required />
+          </div>
+
+          <div class="form-group">
+            <label for="password" class="is-required">Contraseña de la cuenta</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Torneo</legend>
+
+          <div class="form-group">
+            <label for="videojuego">Videojuego del torneo</label>
+            <select id="videojuego" name="videojuego">
+              <option value="valorant">Valorant</option>
+              <option value="lol">League of Legends</option>
+              <option value="fortnite">Fortnite</option>
+              <option value="rocket-league">Rocket League</option>
+              <option value="fc26">EA Sports FC 26</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Plataforma</label>
+            <input type="radio" id="pc" name="plataforma" value="pc" />
+            <label for="pc" class="inline">PC</label>
+            <input type="radio" id="playstation" name="plataforma" value="playstation" />
+            <label for="playstation" class="inline">PlayStation</label>
+            <input type="radio" id="xbox" name="plataforma" value="xbox" />
+            <label for="xbox" class="inline">Xbox</label>
+          </div>
+
+          <div class="form-group">
+            <label>Disponibilidad horaria</label>
+            <input type="checkbox" id="manana" name="manana" value="manana" />
+            <label for="manana" class="inline">Mañana</label>
+            <input type="checkbox" id="tarde" name="tarde" value="tarde" />
+            <label for="tarde" class="inline">Tarde</label>
+            <input type="checkbox" id="noche" name="noche" value="noche" />
+            <label for="noche" class="inline">Noche</label>
+          </div>
+
+          <div class="form-group">
+            <label for="comentarios">Comentarios adicionales</label>
+            <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+          </div>
+        </fieldset>
+
+        <div class="form-group">
+          <input type="checkbox" id="normas" name="normas" required />
+          <label for="normas" class="inline is-required">Acepto las <a href="./normas.html">normas</a> del torneo</label>
         </div>
-      </aside>
 
-      <!-- Formulario de inscripción -->
-      <section class="panel">
-        <h2>Crea tu inscripción</h2>
-        <p class="panel-text">Los campos con <span class="req">*</span> son obligatorios.</p>
-
-        <form action="#" method="post" id="form-inscripcion" name="form-inscripcion">
-          <fieldset>
-            <legend>Datos personales</legend>
-
-            <div class="form-group">
-              <label for="nombre" class="is-required">Nombre completo</label>
-              <input type="text" id="nombre" name="nombre" placeholder="Ej: Carlos García López" autocomplete="name" required />
-            </div>
-
-            <div class="form-group">
-              <label for="email" class="is-required">Correo electrónico</label>
-              <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" autocomplete="email" required />
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="edad">Edad</label>
-                <input type="number" id="edad" name="edad" min="16" max="99" placeholder="Mínimo 16" />
-              </div>
-
-              <div class="form-group">
-                <label for="fecha-nacimiento">Fecha de nacimiento</label>
-                <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" />
-              </div>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <legend>Cuenta de jugador</legend>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="nickname" class="is-required">Nickname</label>
-                <input type="text" id="nickname" name="nickname" minlength="3" maxlength="15" placeholder="3 a 15 caracteres" autocomplete="username" required />
-              </div>
-
-              <div class="form-group">
-                <label for="password" class="is-required">Contraseña</label>
-                <input type="password" id="password" name="password" autocomplete="new-password" required />
-              </div>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <legend>Torneo</legend>
-
-            <div class="form-group">
-              <label for="videojuego">Videojuego</label>
-              <select id="videojuego" name="videojuego">
-                <option value="">Elige un juego</option>
-                <option value="valorant">Valorant</option>
-                <option value="league-of-legends">League of Legends</option>
-                <option value="fortnite">Fortnite</option>
-                <option value="rocket-league">Rocket League</option>
-                <option value="ea-fc-26">EA Sports FC 26</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <p class="label">Plataforma</p>
-              <div class="chips">
-                <input type="radio" id="pc" name="plataforma" value="pc" />
-                <label for="pc" class="chip">PC</label>
-
-                <input type="radio" id="playstation" name="plataforma" value="playstation" />
-                <label for="playstation" class="chip">PlayStation</label>
-
-                <input type="radio" id="xbox" name="plataforma" value="xbox" />
-                <label for="xbox" class="chip">Xbox</label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <p class="label">Disponibilidad horaria <span class="hint">(puedes marcar varias)</span></p>
-              <div class="chips">
-                <input type="checkbox" id="manana" name="disponibilidad" value="manana" />
-                <label for="manana" class="chip">Mañana</label>
-
-                <input type="checkbox" id="tarde" name="disponibilidad" value="tarde" />
-                <label for="tarde" class="chip">Tarde</label>
-
-                <input type="checkbox" id="noche" name="disponibilidad" value="noche" />
-                <label for="noche" class="chip">Noche</label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="comentarios">Comentarios adicionales</label>
-              <textarea id="comentarios" name="comentarios" rows="3" placeholder="Compañeros de equipo, dudas, lo que quieras contarnos"></textarea>
-            </div>
-          </fieldset>
-
-          <div class="form-group terms">
-            <input type="checkbox" id="normas" name="normas" value="acepto" required />
-            <label for="normas" class="is-required">He leído y acepto las <a href="./normas.html">normas del torneo</a></label>
-          </div>
-
-          <div class="buttons">
-            <button type="submit" class="btn btn-primary">Inscribirme</button>
-            <button type="reset" class="btn btn-ghost">Limpiar formulario</button>
-          </div>
-        </form>
-      </section>
+        <button type="submit" class="btn">Inscribirme</button>
+        <button type="reset" class="btn btn-reset">Limpiar formulario</button>
+      </form>
     </main>
   </body>
 </html>
